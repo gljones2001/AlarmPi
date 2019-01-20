@@ -29,12 +29,21 @@ mkfifo ~/.config/pianobar/ctl
 
 if [ $? -ne 0 ]; then
  echo "Could not create fifo for pianobar"
- exit 1; 
+ #exit 1; 
 fi
 
 # add startup file
 mkdir -p ~/.config/upstart/
 printf 'description "AlarmPi alarm clock and configuration server" \nauthor "Mckenna Cisler" \nstart on runlevel [2456] \nstop on shutdown \nscript \nexec python /home/pi/sync/Projects/Coding/RPi/AlarmPi/backend/alarmpi.py \npython /home/pi/sync/Projects/Coding/RPi/AlarmPi/backend/server.py \nend script\n' > ~/.config/upstart/alarmpi.conf
+
+# add startup service
+mv alarmpi.service /lib/systemd/system/alarmpi.service
+
+read -r -p $'\e[32mDo you want AlarmPi to start on boot?\e[0m [Y/n] ' response
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
+then
+    systemctl enable alarmpi.service
+fi
 
 echo "*****Reboot to complete changes*****"
 
