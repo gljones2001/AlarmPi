@@ -53,7 +53,7 @@ read -r -p $'\e[32mPlease Enter Your Prefered AlarmPi Password:\e[0m ' response2
 
 shm_id=$(echo -n "$response2" | sha256sum)
 
-echo "$shm_id" | cut -c1-64 >> backend/encrypt.pass
+echo "$shm_id" | cut -c1-64 >> /var/alarmpi.pass
 
 echo "*****Reboot to complete changes*****"
 
