@@ -21,10 +21,13 @@ from AlarmConstants import *
 from AlarmConfig import *
 import UIModules
 
+with open('/var/alarmpi.pass', 'r') as myfile:
+    encryptFile=myfile.read().replace('\n', '')
+
 # CONSTANTS
 LISTEN_PORT = 8888
 WEB_ROOT = ROOT_DIRECTORY + "/public"
-LOGIN_PASSWORD_HASH = "0127ce4151c7694e87b9e50e71049ebbf39302de88dc6ed72be8e5ae294e9c33"
+LOGIN_PASSWORD_HASH = encryptFile
 
 # Globals (Sorry, they're needed for the MainHandler)
 config = AlarmConfig(CONFIG_FILE)
