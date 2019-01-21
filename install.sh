@@ -44,6 +44,16 @@ then
     systemctl enable alarmpi.service
 fi
 
+# request password
+
+read -r -p $'\e[32mPlease Enter Your Prefered AlarmPi Password:\e[0m ' response2
+
+echo $response2
+
+shm_id=$(echo -n "$respose2" | sha256sum)
+
+echo "$shm_id" | cut -c1-64 >> backend/encrypt.pass
+
 echo "*****Reboot to complete changes*****"
 
 #xdg-open http://everyday-tech.com/how-to-install-pianobar-on-the-raspberry-pi/
