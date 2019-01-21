@@ -28,7 +28,8 @@ mkdir -p ~/.config/pianobar
 mkfifo ~/.config/pianobar/ctl
 
 if [ $? -ne 0 ]; then
- echo "Could not create fifo for pianobar" 
+ echo "Could not create fifo for pianobar"
+ #exit 1; 
 fi
 
 # add startup file
