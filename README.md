@@ -36,6 +36,7 @@ I have also created a 3D-printed case (hosted on [OnShape](https://cad.onshape.c
 This is also possible to be used with the Google AIY Voice Kit v1, if you have it. The GPIO pins needed in `AlarmInput.py` are: 
  - 16 for the button
  - 22 for the LED
+ 
 check [this link](https://aiyprojects.withgoogle.com/static/images/voice-v1/makers/pinout-voice-hat.svg) for reference, so you don't use pins that mess the speaker up.
 
 Unfortunately, I do not have more extensive documentation on the physical assembly, but if you are interested in more help feel free to contact me at mckennacisler@gmail.com.
