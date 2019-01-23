@@ -1,0 +1,17 @@
+[Unit]
+Description=Assistant
+Wants=network-online.target
+After=network-online.target
+Wants=systemd-timesyncd.service
+After=systemd-timesyncd.service
+
+[Service]
+Environment=DISPLAY=:0
+Type=simple
+Restart=always
+User=pi
+WorkingDirectory=/home/pi/AlarmPi/backend
+ExecStart=/usr/bin/python3 -u /home/pi/AlarmPi/start.py --language en-US
+
+[Install]
+WantedBy=multi-user.target
