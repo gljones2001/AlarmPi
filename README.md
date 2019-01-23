@@ -33,4 +33,9 @@ The AlarmPi requires several physical add-ons to the Pi:
 
 I have also created a 3D-printed case (hosted on [OnShape](https://cad.onshape.com/documents/572a233d16a9cb5c5a07492d/w/6e8dac4342ebed8540e47ba9/e/8249a621653d40b8929a5b40)) for housing a Raspberry Pi 2 with all these required components.
 
+This is also possible to be used with the Google AIY Voice Kit v1, if you have it. The GPIO pins needed in `AlarmInput.py` are: 
+ - 16 for the button
+ - 22 for the LED
+check [this link](https://aiyprojects.withgoogle.com/static/images/voice-v1/makers/pinout-voice-hat.svg) for reference, so you don't use pins that mess the speaker up.
+
 Unfortunately, I do not have more extensive documentation on the physical assembly, but if you are interested in more help feel free to contact me at mckennacisler@gmail.com.
